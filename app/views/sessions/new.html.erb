@@ -1,13 +1,21 @@
-<h1>Login</h1>
+<body>
+  <div class="container mt-5">
+    <h1>Login</h1>
 
-<%= form_with :url => "/sessions" do |form| %>
-  <p>
-    <%= form.label "username" %>
-    <%= form.text_field "username" %>
-    <%= form.label "password" %>
-    <%= form.password_field "password" %>
-  </p>
-  <p>
-    <%= form.submit "Login" %>
-  </p>
-<% end %>
+    <%= form_with :url => "/sessions" do |form| %>
+      <div class="form-group my-3">
+        <%= form.label "username", class: 'form-label' %>
+        <%= form.text_field "username", class: 'form-control' %>
+      </div>
+
+      <div class="form-group my-3">
+        <%= form.label "password", class: 'form-label' %>
+        <%= form.password_field "password", class: 'form-control' %>
+      </div>
+
+      <div class="my-3">
+        <%= form.submit "Login", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</body>
