@@ -13,24 +13,8 @@
 ActiveRecord::Schema[7.0].define(version: 2023_05_01_151935) do
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "firstname"
-    t.string "lastname"
+    t.string "real_name"
     t.string "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "places", force: :cascade do |t|
-    t.string "state"
-    t.string "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-  
-  create_table "buckets", force: :cascade do |t|
-    t.string "information_bucket"
-    t.string "place_id"
-    t.string "reference_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

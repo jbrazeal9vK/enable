@@ -5,9 +5,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new
-    @user["firstname"] = params["user"]["firstname"]
-    @user["lastname"] = params["user"]["lastname"]
     @user["username"] = params["user"]["username"]
+    @user["location"] = params["user"]["location"]
+    @user["email"] = params["user"]["email"]
     @user["password"] = BCrypt::Password.create(params["user"]["password"])
     @user.save
     redirect_to "/"
