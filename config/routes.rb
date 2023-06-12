@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Resources
   resources "sessions"
-  resources "users"
+  # resources "users"
   resources :users do
     collection { get :export }
   end

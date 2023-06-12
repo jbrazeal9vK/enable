@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   
   def export
     @users = User.all
-    send_data @users.to_csv, filename: "users-#{Date.today}.csv"
+    send_data @users.to_csv, filename: "users-#{Date.today}.csv", type: 'text/csv', disposition: 'attachment'
   end
   
   def new
