@@ -22,6 +22,18 @@
       background-image: linear-gradient(to right, rgba(255, 192, 203, 0.4), rgba(173, 216, 230, 0.4), rgba(255, 255, 224, 0.4));
       animation: gradient-background 30s ease infinite; /* Here is the animation */
     }
+    .nav-item a {
+      text-decoration: none;
+    }
+
+    .nav-item a:hover {
+      text-decoration: underline;
+      text-decoration-color: #E90C54;
+      text-decoration-thickness: 2px;
+    }
+
+
+
   </style>
 
 
@@ -38,11 +50,17 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Explore
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Finances</a></li>
+              <li><a class="dropdown-item" href="#">Job Search</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Private</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Private</a></li>
+                  <li><a class="dropdown-item" href="#">Medicaid</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
