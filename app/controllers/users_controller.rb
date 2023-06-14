@@ -25,7 +25,24 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+  def forgot_password
+    # Find the user by email or username
+    @user = User.find_by(email: params["email"])
+
+    if @user
+      # Generate and store a password reset token
+      @user.generate_password_reset_token
+      @user.save
+
+      # Send the password reset instructions email
+      UserMailer.password_reset_email(@user).deliver_now
+
+      flash["notice"] = "An email with instructions to reset your password has been sent."
+      redirect_to "/login"
+    else
+      flash["notice"] = "Sorry, the provided username or email address was not found."
+      redirect_to "/forgot_password"
+    end
   end
   
     
